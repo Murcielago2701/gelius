@@ -1,0 +1,44 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block title %}
+    {% if category %}{{ category.title }}{% else %}Products{% endif %}
+{% endblock %}
+{% block content %}
+    <div class="container">
+    <div class="project">
+    <div class="product-detail">
+        <div class="info">
+            <h1>{{ product.name }}</h1>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <div class="image">
+                    <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static "img/no_image.png" %}{% endif %}" width = "100%">
+                </div>
+        
+                <h2><a href="{{ product.category.get_absolute_url }}">{{ product.category }}</a></h2>
+                <p class="price">{{ product.price }}Р</p>
+            </div>
+            <div class="col-8">
+                <form  class="form-korzina" action="{% url "cart:cart_add" product.id %}" method="post">
+                    <div class="inputs">
+                       {{ cart_product_form }}
+                       {% csrf_token %}
+                       <button class = "btn bnt-succsess"  type="submit"> Добавить в корзину</button>
+                    </div>
+               </form>
+                <div class="aspiration">
+                    {{ product.description|linebreaks }}
+                 </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    </div>
+    </div>
+{% endblock %}
+
+
+

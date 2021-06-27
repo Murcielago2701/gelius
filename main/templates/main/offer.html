@@ -1,0 +1,28 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block title %}
+Заявка
+{% endblock %}
+
+{% block content %}
+
+             <div class="page-title" style="background-image: url({%static 'images/himoz.jpg'%})">
+                <div class="container">
+                    <h1>Заявка</h1>
+                    <div class="polosonka">
+                        <ul>
+                            <li><a href="{% url 'main:index'%}">Главная</a></li>
+                            <li><span>Заявка</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="offer">
+                    Ваша заявка успешно отправлена. Наши операторы с вами свяжутся в ближайшее время.
+                </div>
+            </div>
+        </div>
+
+{% endblock %}
