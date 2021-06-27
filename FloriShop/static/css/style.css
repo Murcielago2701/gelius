@@ -630,7 +630,7 @@ th {
   font-size: 16px;
   padding-left: 15px;
   margin-bottom: 15px;
-  border-left: 2px solid #b99d61;
+  border-left: 2px solid #81ae64;
 }
 .widget-list {
   padding: 0;
@@ -651,6 +651,7 @@ th {
   transition: .3s linear;
 }
 .widget-list a:hover {color: #81ae64;}
+.widget-list li {}
 
 
 
@@ -728,4 +729,45 @@ th {
 .offer {
     text-align: center;
     font-size: 42px;
+}
+.btn {
+    background-color: #81ae64
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+}
+
+.dropdown {
+    position: absolute;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    min-width: 200px;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 18px 22px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.btn:hover, .dropdown:hover .btn  {
+    background-color: #81ae64;
 }

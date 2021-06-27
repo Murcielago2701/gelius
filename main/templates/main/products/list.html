@@ -18,9 +18,12 @@
     </div>
 
 
-
-    <div class = "widget">
-        <h3 class = "widget-title" >Категории</h3>
+    <button class="btn">Категории</button>
+    <div class="dropdown">
+      <button class="btn" style="border-left:1px solid #81ae64">
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
         <ul class = "widget-list">
             <li {% if not category %} class="selected" {% endif %}>
                 <a href="{% url "main:product_list" %}">Все</a>
@@ -31,9 +34,10 @@
                 </li>
             {% endfor %}
         </ul>
+      </div>
     </div>
 
-
+    
     <h1>{% if category %}{{ category.name }}{% else %}Все товары{% endif %}</h1>
     <div class="row">
     {% for product in products %}
